@@ -19,6 +19,11 @@
   line-height: 1.2;
 }
 
+.banner-page-overlay .page-overlay-title,
+.banner-page-overlay .page-overlay-meta {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -58,7 +63,8 @@ body.no-banner-mode #toc-inner-wrapper {
 }
 
 /* 全屏壁纸模式下的 TOC 毛玻璃背景 */
-body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
+body.wallpaper-transparent
+  #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
   background: var(--card-bg-transparent) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
@@ -348,10 +354,10 @@ body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded=
    Banner 运行时开关控制
    ========================================================================== */
 html[data-waves-enabled="false"] #header-waves {
-	display: none !important;
+  display: none !important;
 }
 html[data-banner-title-enabled="false"] .banner-text-overlay {
-	display: none !important;
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -402,7 +408,8 @@ html[data-banner-title-enabled="false"] .banner-text-overlay {
     transition: none !important;
   }
 
-  body.enable-banner.fullscreen-banner #banner-wrapper:not(.mobile-hide-banner) {
+  body.enable-banner.fullscreen-banner
+    #banner-wrapper:not(.mobile-hide-banner) {
     position: relative !important;
     height: 100vh !important;
     min-height: 100vh !important;
@@ -411,7 +418,8 @@ html[data-banner-title-enabled="false"] .banner-text-overlay {
     transform: none !important;
   }
 
-  body.enable-banner.fullscreen-banner .absolute.w-full.z-30:not(.mobile-main-no-banner) {
+  body.enable-banner.fullscreen-banner
+    .absolute.w-full.z-30:not(.mobile-main-no-banner) {
     position: relative !important;
     top: 0 !important;
     margin-top: 0 !important;
@@ -420,11 +428,11 @@ html[data-banner-title-enabled="false"] .banner-text-overlay {
 }
 
 html.is-page-transitioning .banner-text-overlay {
-	display: none !important;
+  display: none !important;
 }
 
 html.is-page-transitioning #header-waves {
-	contain: layout style paint;
+  contain: layout style paint;
 }
 
 /* ==========================================================================
@@ -605,20 +613,30 @@ html.is-page-transitioning #header-waves {
   }
 
   /* 公告栏特殊样式调整 */
-  #main-grid[data-layout-mode="grid"] #sidebar widget-layout[data-id="announcement"] .flex.items-center.justify-between > div:first-child {
+  #main-grid[data-layout-mode="grid"]
+    #sidebar
+    widget-layout[data-id="announcement"]
+    .flex.items-center.justify-between
+    > div:first-child {
     width: 100% !important;
     flex: 1 !important;
   }
 
   /* 公告栏拉伸链接按钮 */
-  #main-grid[data-layout-mode="grid"] #sidebar widget-layout[data-id="announcement"] a {
+  #main-grid[data-layout-mode="grid"]
+    #sidebar
+    widget-layout[data-id="announcement"]
+    a {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
   }
 
   /* 公告栏隐藏关闭按钮 */
-  #main-grid[data-layout-mode="grid"] #sidebar widget-layout[data-id="announcement"] button[onclick="closeAnnouncement()"] {
+  #main-grid[data-layout-mode="grid"]
+    #sidebar
+    widget-layout[data-id="announcement"]
+    button[onclick="closeAnnouncement()"] {
     display: none !important;
   }
 }
@@ -719,7 +737,12 @@ html.is-page-transitioning #header-waves {
    ========================================================================== */
 @media (width < 1280px) and (prefers-color-scheme: dark) {
   .banner-text-overlay {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      transparent 100%
+    );
   }
 
   .banner-title {
