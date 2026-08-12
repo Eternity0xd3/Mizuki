@@ -185,7 +185,7 @@ export const siteConfig: SiteConfig = {
     credit: {
       enable: true, // 显示横幅图片来源文本
 
-      text: "Illust by 青葉もち & 鬼针草 & 鸣濑白羽酱 & 緑風マルト", // 要显示的来源文本
+      text: "Illust by 青葉もち & 鬼针草 (Desktop imgs) / 鸣濑白羽酱 & 緑風マルト (Mobile imgs)", // 要显示的来源文本
       // url: "", // （可选）原始艺术品或艺术家页面的 URL 链接
     },
 

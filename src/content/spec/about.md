@@ -2,7 +2,7 @@
 
 ## Blog
 
-The blog is powered by [Astro](astro.build) & [Fuwari](https://github.com/saicaca/fuwari)
+Powered by [Astro](astro.build) & [Mizuki](https://github.com/LyraVoid/Mizuki)
 
 ## About me
 
