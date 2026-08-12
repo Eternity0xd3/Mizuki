@@ -1,5 +1,7 @@
 # About
 
+::github{repo="Eternity0xd3/Mizuki"}
+
 ## Blog
 
 Powered by [Astro](astro.build) & [Mizuki](https://github.com/LyraVoid/Mizuki)

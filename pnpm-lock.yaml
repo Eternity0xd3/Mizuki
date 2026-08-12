@@ -183,6 +183,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.2.91
         version: 1.2.91
+      '@pagefind/windows-x64':
+        specifier: 1.5.2
+        version: 1.5.2
       '@rollup/plugin-yaml':
         specifier: ^5.0.0
         version: 5.0.0(rollup@2.80.0)
@@ -7099,8 +7102,7 @@ snapshots:
   '@pagefind/windows-arm64@1.5.2':
     optional: true
 
-  '@pagefind/windows-x64@1.5.2':
-    optional: true
+  '@pagefind/windows-x64@1.5.2': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
