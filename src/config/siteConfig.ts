@@ -36,7 +36,7 @@ export const siteConfig: SiteConfig = {
     // 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
     mode: "text-icon",
     // 顶栏标题文本
-    text: "Eternity0",
+    text: "Eternity0's 秘密花园",
     // 顶栏标题图标路径，默认使用 public/assets/home/home.webp
     icon: "assets/home/home.webp",
     // 网站Logo图片路径
@@ -163,7 +163,7 @@ export const siteConfig: SiteConfig = {
 
     homeText: {
       enable: true,
-      title: "今天也在摸鱼",
+      title: "摸鱼之家",
       switchable: true,
 
       subtitle: [
