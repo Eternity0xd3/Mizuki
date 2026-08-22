@@ -126,6 +126,8 @@ response = s3.list_objects_v2(Bucket=bucket_name)
 
 ```
 
+---
+
 ```javascript
 // javascript
 import { S3Client } from '@aws-sdk/client-s3
