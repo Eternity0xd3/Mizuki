@@ -1,51 +1,51 @@
 ---
 title: 个人Blog部署及域名解析(Vercel + Cloudflare)
 published: 2025-07-27
-description: '关于本站的搭建，部署，以及域名DNS解析方面的探索心得'
-image: 'https://s3.bmp.ovh/imgs/2025/07/27/eb2d76c5a4373a34.png'
+description: "关于本站的搭建，部署，以及域名DNS解析方面的探索心得"
+image: "https://s3.bmp.ovh/imgs/2025/07/27/eb2d76c5a4373a34.png"
 tags: [Blog, Vercel, Cloudflare]
-category: '记录'
-draft: false 
-lang: ''
+category: "教程"
+draft: false
+lang: ""
 ---
 
 ## 0. 准备
 
-+ 一台能上网的电脑，上面装了[Git](https://git-scm.com/)和好用的IDE（比如[VSCode](https://code.visualstudio.com/)）
-+ 哦对了你的电脑上记得装[NodeJS](nodejs.org/en)
-+ [Github](https://github.com/)账号
-+ 科学上网的工具（可能非必须，但是没有绝对会很难受！）
-+ 一颗决心 (heart
+- 一台能上网的电脑，上面装了[Git](https://git-scm.com/)和好用的IDE（比如[VSCode](https://code.visualstudio.com/)）
+- 哦对了你的电脑上记得装[NodeJS](nodejs.org/en)
+- [Github](https://github.com/)账号
+- 科学上网的工具（可能非必须，但是没有绝对会很难受！）
+- 一颗决心 (heart
 
 ## 1. 本地网页部署
 
 本地部署一个好看的模板，操作如下：
 
-  1. Fork模板仓库到你的仓库下（如果你没找到模板，这里有一个好看的。链接：[Fuwari](https://github.com/saicaca/fuwari)）
+1. Fork模板仓库到你的仓库下（如果你没找到模板，这里有一个好看的。链接：[Fuwari](https://github.com/saicaca/fuwari)）
 
-  2. 使用`git clone <你的git链接>`克隆到本地，这里的git链接是你fork的仓库，形如
+2. 使用`git clone <你的git链接>`克隆到本地，这里的git链接是你fork的仓库，形如
 
-     `https://github.com/<your-account>/<repo-name>.git`注意观察是否为你的github账号下的仓库
+   `https://github.com/<your-account>/<repo-name>.git`注意观察是否为你的github账号下的仓库
 
-  3. 用VSCode(或者任何其他的IDE)打开它
+3. 用VSCode(或者任何其他的IDE)打开它
 
-  4. 根据模板的README文件更改网站内容
+4. 根据模板的README文件更改网站内容
 
-  5. (步骤5-6在上面的README文件中也会写)
+5. (步骤5-6在上面的README文件中也会写)
 
-     在项目根目录（里面有.git的文件夹）打开终端
+   在项目根目录（里面有.git的文件夹）打开终端
 
-     安装pnpm：`npm install -g pnpm`
+   安装pnpm：`npm install -g pnpm`
 
-  6. 在项目根目录安装依赖：`pnpm install`
+6. 在项目根目录安装依赖：`pnpm install`
 
-  7. 本地的博客部署基本完毕，你可以使用`pnpm dev`在本地运行
+7. 本地的博客部署基本完毕，你可以使用`pnpm dev`在本地运行
 
 ## 2. 个性化
 
-  1. 阅读README更改config文件（astro项目通常在以下位置`astro.config.mjs`, `/src/config/*.ts`）
+1. 阅读README更改config文件（astro项目通常在以下位置`astro.config.mjs`, `/src/config/*.ts`）
 
-     还有.env文件
+   还有.env文件
 
 2. 添加博客内容：在根目录下输入`pnpm new-post <文章标题>`创建文字模板，此时会在`src/content/posts`创建一个markdown文件，你可以在markdown中撰写你的内容！
 
@@ -54,13 +54,13 @@ lang: ''
    ```markdown
    ---
    title: 你的Blog标题
-   published: 2023-09-09       # 创建时间
-   description: '描述'
-   image: './cover.jpg'        # 封面图
+   published: 2023-09-09 # 创建时间
+   description: "描述"
+   image: "./cover.jpg" # 封面图
    tags: [标签1, 标签2]
    category: 分类
-   draft: false                # 是否为草稿
-   lang: jp      # Set only if the post's language differs from the site's language in `config.ts`
+   draft: false # 是否为草稿
+   lang: jp # Set only if the post's language differs from the site's language in `config.ts`
    ---
    ```
 
@@ -95,9 +95,9 @@ git config --global user.email "xxxx@xxx.com"  邮箱标识  -------可以填写
 
 有几个选项可供选择：
 
-+ Github Page: 部署方便，但是构建速度慢
-+ Vercel: 极致性能，但是国内不能直接访问部署的站点（但是在用Cloudflare代理时可以解决这一问题，甚至访问速度很不错）
-+ Netlify: 和Vercel差不多，听说构建速度上笔Vercel略逊一筹（但也没啥大区别）
+- Github Page: 部署方便，但是构建速度慢
+- Vercel: 极致性能，但是国内不能直接访问部署的站点（但是在用Cloudflare代理时可以解决这一问题，甚至访问速度很不错）
+- Netlify: 和Vercel差不多，听说构建速度上笔Vercel略逊一筹（但也没啥大区别）
 
 如果你并不打算放到自己的域名，只想要找个网站托管，推荐Github
 
@@ -111,7 +111,7 @@ git config --global user.email "xxxx@xxx.com"  邮箱标识  -------可以填写
 
 3. 导入完成后，界面长这样：
 
-   ![vercel.png](https://s3.bmp.ovh/imgs/2025/07/27/fa5539ba5f892d98.png) 
+   ![vercel.png](https://s3.bmp.ovh/imgs/2025/07/27/fa5539ba5f892d98.png)
 
    此处，domains后面的网址就是托管到的网址（这里我有两个是因为我自行添加了另一个我买的域名，不添加的话只有xxxxxx.vercel.app这样的网址)
 
@@ -170,17 +170,12 @@ git config --global user.email "xxxx@xxx.com"  邮箱标识  -------可以填写
 
 关于在搭博客的过程中，遇到的许多概念性的问题，以及技术的问题，都能询问AI解决，**AI真是个很好的工具**！
 
-+ 感谢DeepSeek
+- 感谢DeepSeek
 
 搭博客的过程以及本文撰写时也参考了许多大佬的博客：[使用Astro+Vercel+Cloudflare一天时间开发部署上线一个知识博客网站](https://juejin.cn/post/7395866920896118836), [Fuwari静态博客搭建教程](https://2x.nz/posts/fuwari/)
-
-
 
 ---
 
 更改：
 
 2026.8.12: 因为换了模板，所以修改了本地部署内容，适用于更多模板
-
-
-
