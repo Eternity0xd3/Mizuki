@@ -3,7 +3,7 @@ title: "CORS: 解析audio元素时跨域请求限制的原因和解决方法"
 published: 2025-08-07
 description: "使用Web Audio Api的AudioContext.createMediaElementSource()分析Audio元素时，出现CORS访问限制(MediaElementAudioSource outputs zeroes due to CORS access restrictions for xxx)"
 image: ""
-tags: [CORS, javascript, web]
+tags: [CORS, Javascript, web]
 category: "记录"
 draft: false
 lang: ""
