@@ -1,6 +1,6 @@
 ---
 title: 你觉得你是逆向工程吗？我觉得我是！
-published: 2026-10-18
+published: 2026-10-17
 description: "通过把网易云音乐超级拆解超级抓包，挖出其中的api，并持续探索网易云程序员的真相"
 image: "https://img.eternity0.xyz/blog/reverse-cloudmusic/v6-response.png"
 tags: ["web", "reverse engineering"]
