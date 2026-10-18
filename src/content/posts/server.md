@@ -9,7 +9,7 @@ draft: false
 lang: ""
 ---
 
-最近，我用Node写了一个网易云音乐 API (详情见：https://www.eternity0.xyz/posts/reverse-cloudmusic/)，我迫切需要把他部署到一个24小时开着的服务器上供人（我）访问。
+最近，我用Node写了一个网易云音乐 API (详情见：[https://www.eternity0.xyz/posts/reverse-cloudmusic/](https://www.eternity0.xyz/posts/reverse-cloudmusic/))，我迫切需要把他部署到一个24小时开着的服务器上供人（我）访问。
 
 之前我使用过Render的免费托管，但冷启动会造成明显的访问等待，令人难受，所以我决定买一台自己的云服务器。
 
