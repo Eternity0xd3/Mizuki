@@ -127,8 +127,7 @@ MD5 最终得到一个 128 位摘要，通常表示为 32 个十六进制字符�
 随后，EAPI 将路径、JSON 和 MD5 摘要拼接起来：
 
 ```javascript
-const plaintext =
-    `${path}-36cd479b6b5-${text}-36cd479b6b5-${digest}`;
+const plaintext = `${path}-36cd479b6b5-${text}-36cd479b6b5-${digest}`;
 ```
 
 这写东西会一起送去加密，真是狠啊
@@ -153,16 +152,9 @@ Node.js 已经内置 `node:crypto` 模块，因此不需要另外安装加密库
 import crypto from "node:crypto";
 
 function encrypt128Ecb(data, key) {
-    const cipher = crypto.createCipheriv(
-        "aes-128-ecb",
-        key,
-        null
-    );
+  const cipher = crypto.createCipheriv("aes-128-ecb", key, null);
 
-    return Buffer.concat([
-        cipher.update(data),
-        cipher.final()
-    ]);
+  return Buffer.concat([cipher.update(data), cipher.final()]);
 }
 ```
 
@@ -250,7 +242,7 @@ AES-128-ECB + PKCS#7 Padding
 在分析最小化参数的时候，我注意到这个参数
 
 ```javascript
-e_r: true
+e_r: true;
 ```
 
 经过测试，我发现它与服务端响应加密行为有关。
@@ -399,3 +391,25 @@ playlist/detail --> 获得所有歌曲id --> song/detail --> 所有歌曲详细�
 但也正是这种不断遇到问题、提出假设、通过实验验证的过程，让软件逆向变得有趣。
 
 **逆向工程并不一定意味着破解某个复杂的保护机制。有时候，它只是认真观察一个程序如何工作，再尝试用自己的代码复现其行为。**
+
+## 10. 参考项目与致谢
+
+这次网易云音乐 API 的逆向探索并不是完全从零开始的。
+
+特别感谢 GitHub 上的开源项目 [NeteaseCloudMusicApiEnhanced/api-enhanced](https://github.com/NeteaseCloudMusicApiEnhanced/api-enhanced) 及其开发者和贡献者。该项目为我理解网易云音乐的接口结构、EAPI 加密协议和请求方式提供了重要参考。
+
+在研究过程中，我结合 mitmproxy 捕获的客户端请求，阅读并分析了已有的开源实现，再使用 Node.js 独立编写了加密模块和业务接口，并通过实际请求验证自己的理解。
+
+**站在巨人的肩膀上，才能看得更远。**
+
+开源社区最有魅力的地方，也许就在于此：前人留下的成果，可以成为后来者学习和创造的起点。
+
+感谢所有愿意分享研究成果的开发者，也希望这篇文章能够为其他对软件逆向感兴趣的人提供一点帮助。
+
+当然，也特别感谢这次探索过程中 AI 提供的指导。从理解协议、分析报错到讨论代码设计，它让许多原本陌生的技术变得更加容易接近。
+
+但最终让我收获最多的，仍然是自己动手抓包、编写代码、提出假设，再通过实验验证的过程。
+
+**Read the source. Test the hypothesis. Build your own.**
+
+阅读源码，验证猜想，然后亲手实现。
